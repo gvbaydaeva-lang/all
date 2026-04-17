@@ -1,0 +1,265 @@
+:root {
+  color-scheme: light;
+  --bg: #f4efe6;
+  --surface: #fffdf8;
+  --ink: #1c1410;
+  --muted: #5c5248;
+  --accent: #8b4513;
+  --accent-soft: #c9a227;
+  --border: #e0d4c4;
+  --shadow: rgba(28, 20, 16, 0.08);
+  font-family:
+    "Noto Sans",
+    "DejaVu Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 20% 0%, #fff8ea, var(--bg));
+  color: var(--ink);
+  line-height: 1.55;
+  font-feature-settings: "kern" 1;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+.app-header {
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 0.35rem;
+}
+
+.app-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.85rem, 4vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.lede {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 12px 40px var(--shadow);
+  padding: 1.5rem 1.35rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: 1.75rem 1.75rem 1.5rem;
+  }
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.alchiki-layout {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 720px) {
+  .alchiki-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: start;
+  }
+}
+
+.alchiki-die-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.alchiki-die {
+  width: min(100%, 200px);
+  aspect-ratio: 1;
+  border-radius: 1.25rem;
+  border: 2px solid var(--border);
+  background: linear-gradient(145deg, #fff, #f0e6d8);
+  cursor: pointer;
+  padding: 0;
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 8px 24px var(--shadow);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.alchiki-die:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 12px 28px rgba(28, 20, 16, 0.12);
+}
+
+.alchiki-die:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.alchiki-die:disabled {
+  cursor: wait;
+  opacity: 0.92;
+}
+
+.alchiki-die--rolling {
+  animation: alchiki-wobble 0.52s ease-in-out infinite;
+}
+
+@keyframes alchiki-wobble {
+  0% {
+    transform: rotate(-6deg) scale(1);
+  }
+  50% {
+    transform: rotate(6deg) scale(1.02);
+  }
+  100% {
+    transform: rotate(-6deg) scale(1);
+  }
+}
+
+.alchiki-die__face {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem;
+}
+
+.alchiki-die__label {
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.alchiki-die__hint {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.alchiki-die-caption {
+  margin: 0.85rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 16rem;
+}
+
+.alchiki-result {
+  padding: 1rem 1rem 1.1rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(120deg, #fff9ec, #fff);
+  border: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.alchiki-result__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.65rem;
+  font-weight: 700;
+}
+
+.alchiki-result__meaning {
+  margin: 0;
+  color: var(--muted);
+}
+
+.alchiki-placeholder {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+.alchiki-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.alchiki-legend li {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 0.35rem 0.65rem;
+  align-items: baseline;
+  padding: 0.55rem 0.65rem;
+  border-radius: 0.5rem;
+  background: rgba(139, 69, 19, 0.04);
+}
+
+.alchiki-legend__name {
+  font-weight: 700;
+  min-width: 3.5rem;
+}
+
+.alchiki-legend__meta {
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.alchiki-legend__desc {
+  grid-column: 1 / -1;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+@media (min-width: 480px) {
+  .alchiki-legend li {
+    grid-template-columns: 4rem 3.5rem 1fr;
+  }
+
+  .alchiki-legend__desc {
+    grid-column: auto;
+  }
+}
