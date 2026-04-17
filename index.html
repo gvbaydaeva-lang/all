@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="xal">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Альчики — калмыцкая игра в кости</title>
+    <!-- Noto Sans: кириллица + Cyrillic Extended (ө, ә и др.) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root">
+      <!-- Если открыть этот файл как file://, React не соберётся — покажем подсказку -->
+      <div
+        class="vite-file-hint"
+        style="
+          font-family: system-ui, 'Noto Sans', sans-serif;
+          padding: 1.75rem;
+          max-width: 28rem;
+          margin: 0 auto;
+          line-height: 1.5;
+          color: #1c1410;
+        "
+      >
+        <p style="margin: 0 0 1rem; font-size: 1.05rem">
+          <strong>Этот HTML нельзя просто открыть двойным щелчком из папки.</strong>
+          Браузер не собирает TypeScript/React сам — нужен локальный сервер Vite.
+        </p>
+        <p style="margin: 0 0 0.75rem">В терминале в папке проекта (один раз):</p>
+        <pre
+          style="
+            margin: 0 0 1rem;
+            padding: 0.85rem 1rem;
+            background: #f4efe6;
+            border-radius: 0.5rem;
+            overflow: auto;
+            font-size: 0.9rem;
+          "
+        ><code>npm install
+npm run dev</code></pre>
+        <p style="margin: 0 0 0.75rem; font-size: 0.95rem; color: #5c5248">
+          Команда <code>dev</code> поднимет сервер и <strong>сама откроет</strong>
+          вкладку (<code>http://localhost:5173</code>) — интерфейс появится там.
+        </p>
+        <p style="margin: 0; font-size: 0.95rem; color: #5c5248">
+          После <code>npm run build</code> можно смотреть сборку:
+          <code>npm run preview</code> — тоже через локальный адрес, не через
+          <code>file://</code>.
+        </p>
+      </div>
+    </div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>
