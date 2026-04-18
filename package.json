@@ -7,7 +7,9 @@
     "dev": "vite --open",
     "start": "vite --open",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --open"
+    "preview": "vite preview --open",
+    "open:app": "npm run build && vite preview --port 4178 --open",
+    "serve:dist": "vite preview --port 4178 --open"
   },
   "dependencies": {
     "react": "^19.0.0",

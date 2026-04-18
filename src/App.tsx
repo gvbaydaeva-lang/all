@@ -14,6 +14,23 @@ export default function App() {
       <main>
         <AlchikiGame />
       </main>
+      <footer className="app-footer muted">
+        <a
+          href="https://gvbaydaeva-lang.github.io/all/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Открыть на GitHub Pages
+        </a>
+        <span aria-hidden="true"> · </span>
+        <a
+          href="https://github.com/gvbaydaeva-lang/all"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Репозиторий
+        </a>
+      </footer>
     </div>
   );
 }

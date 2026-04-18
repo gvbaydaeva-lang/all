@@ -28,10 +28,11 @@
         "
       >
         <p style="margin: 0 0 1rem; font-size: 1.05rem">
-          <strong>Этот HTML нельзя просто открыть двойным щелчком из папки.</strong>
-          Браузер не собирает TypeScript/React сам — нужен локальный сервер Vite.
+          <strong>Вы открыли файл с диска (<code>file://</code>).</strong> Так
+          React и TypeScript не запускаются — нужен локальный адрес
+          <code>http://localhost:…</code>.
         </p>
-        <p style="margin: 0 0 0.75rem">В терминале в папке проекта (один раз):</p>
+        <p style="margin: 0 0 0.5rem; font-weight: 600">Самый простой вариант</p>
         <pre
           style="
             margin: 0 0 1rem;
@@ -42,15 +43,33 @@
             font-size: 0.9rem;
           "
         ><code>npm install
-npm run dev</code></pre>
-        <p style="margin: 0 0 0.75rem; font-size: 0.95rem; color: #5c5248">
-          Команда <code>dev</code> поднимет сервер и <strong>сама откроет</strong>
-          вкладку (<code>http://localhost:5173</code>) — интерфейс появится там.
+npm run open:app</code></pre>
+        <p style="margin: 0 0 1rem; font-size: 0.95rem; color: #5c5248">
+          Скрипт соберёт проект и запустит просмотр через Vite — браузер
+          <strong>откроется сам</strong> (адрес вида
+          <code>http://localhost:4178</code>).
+        </p>
+        <p style="margin: 0 0 0.5rem; font-weight: 600">Режим разработки</p>
+        <pre
+          style="
+            margin: 0 0 1rem;
+            padding: 0.85rem 1rem;
+            background: #f4efe6;
+            border-radius: 0.5rem;
+            overflow: auto;
+            font-size: 0.9rem;
+          "
+        ><code>npm run dev</code></pre>
+        <p style="margin: 0 0 1rem; font-size: 0.95rem; color: #5c5248">
+          Обычно откроется <code>http://localhost:5173</code>.
         </p>
         <p style="margin: 0; font-size: 0.95rem; color: #5c5248">
-          После <code>npm run build</code> можно смотреть сборку:
-          <code>npm run preview</code> — тоже через локальный адрес, не через
-          <code>file://</code>.
+          После настройки GitHub Pages (деплой из Actions) приложение будет по
+          адресу
+          <a href="https://gvbaydaeva-lang.github.io/all/"
+            >gvbaydaeva-lang.github.io/all</a
+          >
+          — его можно открыть как обычный сайт, без терминала.
         </p>
       </div>
     </div>
